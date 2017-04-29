@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
+import ElementUi from 'element-ui';
+import 'element-ui/lib/theme-default/index.css'
 import router from './router';
 
 /**
@@ -14,6 +16,8 @@ Vue.component('list', List);
 Vue.component('item', Item);
 
 Vue.config.productionTip = false
+
+Vue.use(ElementUi);
 
 /* eslint-disable no-new */
 new Vue({

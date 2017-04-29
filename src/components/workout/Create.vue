@@ -1,22 +1,49 @@
 <template>
   <div class="Workout-create">
+    <h1>Create workout</h1>
     <div class="Workout-form">
-      <label for="name">Workout name</label>
-      <input type="text" id="name" v-model="name">
+      <el-row type="flex" :gutter="20">
+        <el-col :span="6">
+          <div class="grid-content">Workout name</div>
+        </el-col>
+        <el-col :span="18">
+          <el-input placeholder="Please input" v-model="name"></el-input>
+        </el-col>
+      </el-row>
+      <el-row type="flex" :gutter="20">
+        <el-col :span="6">
+          <div class="grid-content">Round Name</div>
+        </el-col>
+        <el-col :span="18">
+          <el-input placeholder="Please input" v-model="roundName"></el-input>
+        </el-col>
+      </el-row>
+      <el-row type="flex" :gutter="20">
+        <el-col :span="6">
+          <div class="grid-content">Round Type</div>
+        </el-col>
+        <el-col :span="18">
+          <el-input placeholder="Please input" v-model="roundType"></el-input>
+        </el-col>
+      </el-row>
+      <el-row type="flex" :gutter="20">
+        <el-col :span="6">
+          <div class="grid-content">Round Duration</div>
+        </el-col>
+        <el-col :span="18">
+          <el-input :span="3" :gutter="5" placeholder="Please input" v-model="roundMinutes"></el-input>
+          <el-input :span="3" :gutter="5" placeholder="Please input" v-model="roundSeconds"></el-input>
+        </el-col>
+      </el-row>
 
-      <label for="round-name">Round Name</label>
-      <input type="text" id="round-name" v-model="roundName">
-
-      <label for="round-type">Round Type</label>
-      <input type="text" id="round-type" v-model="roundType">
-
-      <label for="round-minutes">Round Duration</label>
-      <input type="text" id="round-minutes" v-model="roundMinutes" placeholder="MM" maxlength="2">
-      <input type="text" id="round-seconds" v-model="roundSeconds" placeholder="SS" maxlength="2">
-
-      <button v-on:click="addRound">Add round</button>
-
-      <button v-on:click="createWorkout">Create workout</button>
+      <el-row>
+        <el-col :span="12">
+          <el-button>Add round</el-button>
+        </el-col>
+        <el-col :span="12">
+          <el-button type="primary" v-on:click="createWorkout">Create workout</el-button>
+        </el-col>
+      </el-row>
     </div>
     <div class="Workout-preview">
       <p>{{name}}</p>
@@ -83,21 +110,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
